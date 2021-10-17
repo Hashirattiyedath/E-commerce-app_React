@@ -1,8 +1,7 @@
-
-export const cardReducer = (state, action)=> {
+const cartReducer =(state, action)=> {
     switch (action.type) {
 
         default:
-        return state;
+            return state
     }
 }

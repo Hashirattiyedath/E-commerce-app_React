@@ -1,11 +1,23 @@
 import React from 'react';
-import Cart from './Cart';
-import Header from './Header';
+import { CartState } from './context/Context';
+import Filters from './Filters';
+import './styles.css';
+import SingleProducts from './SingleProducts';
 
 function Home() {
+    
+    const {state: {products}} = CartState();
+    console.log(products)
+    
     return (
-        <div>
-             <h3>HOME PAGE</h3>
+        <div className='home'>
+            <Filters />
+
+            <div className="productContainer">
+                {products.map((prod)=> {
+                    return <SingleProducts prod={prod} key={prod.id}/>
+                })}
+            </div>
         </div>
     )
 }
