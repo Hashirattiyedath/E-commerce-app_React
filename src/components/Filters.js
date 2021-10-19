@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
 import Rating from './Rating';
+import Test from './Test';
 
 function Filters() {
 
@@ -48,10 +49,11 @@ function Filters() {
 
             <span>
                 <label style={{ paddingRight: 10 }}>Rating: </label>
-                <Rating rating={rate} style={{ cursor: "pointer" }}/>
+                <Rating rating={rate} style={{ cursor: "pointer" }} addRate={(i)=> {setRate(i)}}/>
             </span>
 
-            <Button variant="light">Clear filters</Button>
+            <Button variant=" light">Clear filters</Button>
+
         </div>
     )
 }
